@@ -4,7 +4,8 @@ import { Chart, registerables } from 'chart.js';
 
 const LineChart = (props: { data: DataType[] }) => {
     Chart.register(...registerables);
-    const twitterData = {
+
+    const data = {
         labels: props.data[0].map((data) => data.timeStamp),
         datasets: [
             {
@@ -26,7 +27,7 @@ const LineChart = (props: { data: DataType[] }) => {
         ]
     };
 
-    return <Line data={twitterData} />;
+    return <Line data={data} />;
 };
 
 export default LineChart;
